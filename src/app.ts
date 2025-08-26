@@ -3,7 +3,7 @@ import 'dotenv/config';
 import express from 'express';
 import { credential } from 'firebase-admin';
 import { initializeApp } from 'firebase-admin/app';
-import { serviceFirebasAccount } from './keys/padelsys-2200e-firebase-adminsdk-9lnh0-3a119295af';
+import { serviceFirebasAccount } from './keys/firebaseKeys';
 import { loadRoutes } from './routes/index';
 
 const main = async () => {
