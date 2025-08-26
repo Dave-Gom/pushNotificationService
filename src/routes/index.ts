@@ -6,12 +6,11 @@ export const loadRoutes = async () => {
     const router = Router();
     const PATH_ROUTER = `${__dirname}`;
 
-    readdirSync(PATH_ROUTER).filter(filename => {
+    readdirSync(PATH_ROUTER).forEach(filename => {
         const cleanName = cleanFileName(filename);
         if (cleanName !== 'index') {
-            import(`./${cleanName}`).then(moduleRouter => {
-                router.use(`/${cleanName}`, moduleRouter.router);
-            });
+            const moduleRouter = require(`./${cleanName}`);
+            router.use(`/${cleanName}`, moduleRouter.router);
         }
     });
 

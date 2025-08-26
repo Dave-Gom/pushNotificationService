@@ -3,8 +3,6 @@ import { virifyToken } from '../utils/jdt.handler';
 
 export const checkSession = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        console.log('estoy aqui', req.headers);
-
         const isUser = virifyToken(`${req.headers.clientsecret}`);
 
         if (isUser) {

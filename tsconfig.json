@@ -1,12 +1,16 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
+        "target": "ES2020", // mínimo ES2020 para soportar #private
+        "module": "CommonJS", // Node corre directo sin "type": "module"
+        "moduleResolution": "node",
         "outDir": "dist",
+        "rootDir": "src",
         "strict": true,
-        "lib": ["esnext"],
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "moduleResolution": "Node"
-    }
+        "lib": ["esnext"],
+        "sourceMap": true
+    },
+    "include": ["src"]
 }
