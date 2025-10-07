@@ -1,6 +1,12 @@
 import { messaging } from 'firebase-admin';
 
-export const sendNotification = async (token: string, title: string, body: string, imageUrl: string) => {
+export const sendNotification = async (
+    token: string,
+    title: string,
+    body: string,
+    imageUrl: string,
+    deeplink: string
+) => {
     try {
         const messagingOBj = messaging();
         const res = await messagingOBj.send({
@@ -9,6 +15,9 @@ export const sendNotification = async (token: string, title: string, body: strin
                 body,
                 title,
                 imageUrl,
+            },
+            data: {
+                deeplink,
             },
         });
 
