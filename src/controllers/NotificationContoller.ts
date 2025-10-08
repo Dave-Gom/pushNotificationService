@@ -4,7 +4,7 @@ import { handleHttp } from '../utils/error.handler';
 
 export const postNotification = async ({ body }: Request, res: Response) => {
     try {
-        const result = await sendNotification(body.token, body.title, body.body, body.imageUrl, body.deeplink);
+        const result = await sendNotification(body.token, body.title, body.body, body.imageUrl, body.deepLink);
 
         if (result) {
             res.send(result);

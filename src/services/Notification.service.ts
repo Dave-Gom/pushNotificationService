@@ -5,7 +5,7 @@ export const sendNotification = async (
     title: string,
     body: string,
     imageUrl: string,
-    deeplink: string
+    deepLink: string
 ) => {
     try {
         const messagingOBj = messaging();
@@ -17,7 +17,7 @@ export const sendNotification = async (
                 imageUrl,
             },
             data: {
-                deeplink,
+                deepLink,
             },
         });
 
