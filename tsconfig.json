@@ -10,7 +10,12 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "lib": ["esnext"],
-        "sourceMap": true
+        "sourceMap": false, // Deshabilitado para producción
+        "removeComments": true, // Eliminar comentarios en el build
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true
     },
-    "include": ["src"]
+    "include": ["src"],
+    "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
 }
